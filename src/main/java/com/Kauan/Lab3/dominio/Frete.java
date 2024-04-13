@@ -14,4 +14,9 @@ public class Frete implements Serializable {
     @Column(unique = true)
     private Integer numeroNotaFiscal;
     private BigDecimal valorKmRodado;
+
+    @ManyToOne
+    @JoinColumn(name = "id_veiculo")
+    private Veiculo veiculo;
+
 }
