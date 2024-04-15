@@ -2,6 +2,8 @@ package com.Kauan.Lab3.dominio;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.OneToMany;
 
@@ -19,4 +21,9 @@ public class Funcionario extends PessoaFisica implements Serializable {
 
     @OneToMany(mappedBy = "funcionario")
     private List<Dependente> dependentes = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "id_filial", nullable=false)
+    private Filial filial;
+
 }

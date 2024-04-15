@@ -16,8 +16,8 @@ public class Dependente implements Serializable {
     private LocalDate dataNascimento;
 
     @ManyToOne
-    @JoinColumn(name = "id_funcionario",nullable = false)
+    @JoinColumn(name = "id_funcionario", nullable = false/* , foreignKey = @ForeignKey(name = "FK_Dependente_Funcionario")*/)
     private Funcionario funcionario;
-
+ 
 
 }
